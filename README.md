@@ -7,7 +7,7 @@ This project uses [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) version 4
 
 [Mongoose](https://mongoosejs.com) version 5.2.17 is used to model the application data. 
 
-This project also uses [Express](http://expressjs.com/) version 4.16.4.
+This project also uses [Express](http://expressjs.com/) version 4.16.4 and [Express-session](https://www.npmjs.com/package/express-session) version 1.15.6.
 
 
 ## Notes
