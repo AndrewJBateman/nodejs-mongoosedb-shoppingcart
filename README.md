@@ -1,13 +1,13 @@
 # Node.js, mongoDB & Mongoose Shopping Cart
 
 Code to learn to learn Node.js. This is part of a Udemy Node.js course.
-Working shopping cart where products can be created, read, updated and deleted (CRUD) via a local web browser and are stored in a cloud-based mongoDB database. Products can be added to a cart and 'ordered' under an auto-generated order number. 
+Working shopping cart where products can be created, read, updated and deleted (CRUD) via a local web browser and are stored in a cloud-based mongoDB database. Products can be added to a cart and 'ordered' under an auto-generated order number. The login now created a session cookie that expires after a time set in app.js
 
 This project uses [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) version 4.0 and [MongoDB Compass](https://www.mongodb.com/download-center/compass) version 1.16.3 on an Azure cloud server. 
 
 [Mongoose](https://mongoosejs.com) version 5.2.17 is used to model the application data. 
 
-This project also uses [Express](http://expressjs.com/) version 4.16.4 and [Express-session](https://www.npmjs.com/package/express-session) version 1.15.6.
+This project also uses [Express](http://expressjs.com/) version 4.16.4 and [Express-session](https://www.npmjs.com/package/express-session) version 1.15.6. 
 
 
 ## Notes

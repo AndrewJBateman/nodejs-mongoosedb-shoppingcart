@@ -29,21 +29,13 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(
   session({ 
-    secret: 'my secret', 
+    secret: 'keyboard cat', 
     resave: false, 
     saveUninitialized: false,
-    store: store
+    store: store,
+    cookie: { maxAge: 600000 } //10 minutes
   })
 );
-
-app.use((req, res, next) => {
-  User.findById('5c3c5fb4cda82c40382e0f8a')
-    .then(user => {
-      req.user = user;
-      next();
-    })
-    .catch(err => console.log(err));
-});
 
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
