@@ -10,12 +10,22 @@ exports.getLogin = (req, res, next) => {
 
 exports.postLogin = (req, res, next) => {
   User.findById('5c3c5fb4cda82c40382e0f8a')
-  .then(user => {
-    req.session.isLoggedIn = true;
-    req.session.user = user;
+    .then(user => {
+      req.session.isLoggedIn = true;
+      req.session.user = user;
+      req.session.save(err => {
+        console.log(err);
+        res.redirect('/');
+      });
+    })
+    .catch(err => console.log(err));
+};
+
+exports.postLogout = (req, res, next) => {
+  req.session.destroy(err => {
+    console.log(err);
     res.redirect('/');
-  })
-  .catch(err => console.log(err));
+  });
 };
 
 /*example session cookie, default name 'connect.sid':
