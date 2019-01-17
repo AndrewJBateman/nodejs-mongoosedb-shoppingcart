@@ -1,3 +1,4 @@
+//use product model defined in models/product
 const Product = require('../models/product');
 
 exports.getAddProduct = (req, res, next) => {
@@ -9,6 +10,7 @@ exports.getAddProduct = (req, res, next) => {
   });
 };
 
+//create new product using product model and user inputs in req.body
 exports.postAddProduct = (req, res, next) => {
   const title = req.body.title;
   const imageUrl = req.body.imageUrl;

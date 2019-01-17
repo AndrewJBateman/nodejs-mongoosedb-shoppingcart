@@ -32,8 +32,8 @@ app.use(
     secret: 'keyboard cat', 
     resave: false, 
     saveUninitialized: false,
-    store: store,
-    cookie: { maxAge: 600000 } //10 minutes
+    store: store
+    //cookie: { maxAge: 600000 } //10 minutes
   })
 );
 
@@ -41,6 +41,7 @@ app.use((req, res, next) => {
   if (!req.session.user) {
     return next();
   }
+  console.log('Here is the req.session.user id: ' +req.session.user._id); //5c3c5fb4cda82c40382e0f8a
   User.findById(req.session.user._id)
     .then(user => {
       req.user = user;
@@ -60,18 +61,6 @@ mongoose
     MONGODB_URI, { useNewUrlParser: true }
   )
   .then(result => {
-    User.findOne().then(user => {
-      if (!user) {
-        const user = new User({
-          name: 'Andrew',
-          email: 'Andrew@gmail.com',
-          cart: {
-            items: []        
-          }
-        });
-        user.save();
-      }
-    });
     app.listen(3000);
   })
   .catch(err => {
