@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport(
       api_key: key
     }
   })
-)
+);
 
 exports.getLogin = (req, res, next) => {
   let message = req.flash('error');
