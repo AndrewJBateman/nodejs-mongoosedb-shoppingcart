@@ -13,7 +13,8 @@ This project also uses [Express](http://expressjs.com/) version 4.16.4 and [Expr
 
 More dependancies:
 [Multer](https://github.com/expressjs/multer), node.js middleware for handling multipart/form-data; mainly uploading files.  
-[PDFKit](https://pdfkit.org/), a JavaScript PDF generation library for Node and the browser. THis is used to create an order invoice pdf.
+[PDFKit](https://pdfkit.org/), a JavaScript PDF generation library for Node and the browser. This is used to create an order invoice pdf.
+[stripe](https://stripe.com), an online payment API, is added. 
 
 
 ## Notes

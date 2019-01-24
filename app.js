@@ -10,6 +10,8 @@ const flash = require('connect-flash');
 const multer = require('multer');
 
 const errorController = require('./controllers/error');
+const shopController = require('./controllers/shop');
+const isAuth = require('./middleware/is-auth');
 const User = require('./models/user');
 
 const MONGODB_URI = 'mongodb+srv://user1:2vE6ll3YrUEJm9y3@cluster0-kaj5u.azure.mongodb.net/shop';
@@ -63,12 +65,11 @@ app.use(
     store: store
   })
 );
-app.use(csrfProtection);
+
 app.use(flash());
 
 app.use((req, res, next) => {
   res.locals.isAuthenticated = req.session.isLoggedIn;
-  res.locals.csrfToken = req.csrfToken();
   next();
 });
 
@@ -90,6 +91,14 @@ app.use((req, res, next) => {
     });
 });
 
+app.post('/create-order', isAuth, shopController.postOrder);
+
+app.use(csrfProtection);
+app.use((req, res, next) => {
+  res.locals.csrfToken = req.csrfToken();
+  next();
+});
+
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 app.use(authRoutes);
@@ -106,7 +115,6 @@ app.use((error, req, res, next) => {
     path: '/500',
     isAuthenticated: req.session.isLoggedIn
   });
-  console.log(isAuthenticated);
 });
 
 mongoose
