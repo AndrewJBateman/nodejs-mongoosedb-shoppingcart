@@ -15,6 +15,8 @@ More dependancies:
 [Multer](https://github.com/expressjs/multer), node.js middleware for handling multipart/form-data; mainly uploading files.  
 [PDFKit](https://pdfkit.org/), a JavaScript PDF generation library for Node and the browser. This is used to create an order invoice pdf.
 [stripe](https://stripe.com), an online payment API, is added. 
+[Helmet](https://helmetjs.github.io/) added to allow setting of HTTP headers to increase app security. Needs to be configured. 
+[Compression](https://www.npmjs.com/package/compression) middleware added to compress response bodies for all requests that traverse through the middleware, unless they include a Cache-Control header with the no-transform directive, as compressing will transform the body.
 
 
 ## Notes
