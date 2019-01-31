@@ -72,7 +72,6 @@ app.use(helmet({
   dnsPrefetchControl: { allow: false },
   referrerPolicy: { policy: 'same-origin' }
 }));
-
 app.use(compression());
 app.use(morgan('combined', { stream: accessLogStream }));
 
