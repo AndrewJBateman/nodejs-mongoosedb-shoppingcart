@@ -65,8 +65,14 @@ const accessLogStream = fs.createWriteStream(
   path.join(__dirname, 'access.log'),
   { flags: 'a' }
 );
+/*Helmet: Only allows site to be loaded in an iFrame with its own pages.
+Does not allow DNS prefetching & only allows site to send the referrer to its own pages.*/
+app.use(helmet({
+  frameguard: { action: 'sameorigin' },
+  dnsPrefetchControl: { allow: false },
+  referrerPolicy: { policy: 'same-origin' }
+}));
 
-app.use(helmet());
 app.use(compression());
 app.use(morgan('combined', { stream: accessLogStream }));
 

@@ -11,6 +11,7 @@ This project uses [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) version 4
 
 This project also uses [Express](http://expressjs.com/) version 4.16.4 and [Express-session](https://www.npmjs.com/package/express-session) version 1.15.6. 
 
+
 **More dependancies:**<br>
 * [Multer](https://github.com/expressjs/multer), node.js middleware for handling multipart/form-data; mainly for uploading files.  
 * [PDFKit](https://pdfkit.org/), a JavaScript PDF generation library for Node and the browser. This is used to create an order invoice pdf.
