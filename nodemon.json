@@ -1,9 +1,9 @@
 {
     "env": {
-        "MONGO_USER": "user1",
-        "MONGO_PASSWORD": "2vE6ll3YrUEJm9y3",
+        "MONGO_USER": "",
+        "MONGO_PASSWORD": "",
         "MONGO_DEFAULT_DATABASE": "shop",
-        "STRIPE_KEY": "sk_test_cyP3sLjqKW5gbkg5HxGvZp5x",
-        "API_KEY": "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"
+        "STRIPE_KEY": "",
+        "API_KEY": ""
     }
 }

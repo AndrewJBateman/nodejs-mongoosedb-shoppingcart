@@ -56,11 +56,32 @@
 
 ## Code Examples
 
-tba
+* `/routes/admin.js` router.post route to add a product entered by the user, if authorized.
+
+```javascript
+router.post(
+  '/add-product',
+  [
+    body('title')
+      .isString()
+      .isLength({ min: 3 })
+      .trim(),
+    body('price').isFloat(),
+    body('description')
+      .isLength({ min: 5, max: 400 })
+      .trim()
+  ],
+  isAuth,
+  adminController.postAddProduct
+);
+
+```
 
 ## Features
 
 * Once logged in it is possible to add products to a shop website.
+
+* User authorization is done by issuing a time-limited session cookie.
 
 ## App Status
 
