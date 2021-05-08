@@ -15,7 +15,7 @@
   "author": "Maximilian Schwarzmüller/Andrew Bateman",
   "license": "ISC",
   "devDependencies": {
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "nodemon": "^1.19.1"
   },
   "dependencies": {
